@@ -6,8 +6,6 @@ We can find the remainder after dividing two numbers with a modulus: %.
 We can generate a random number with Math.random, then make it a whole number with Math.floor.
 We write a single line comment with // and a multi-line comment with /* and */
 */
-// String interpolation- is when you insert a variable into a string
-
  
 //Variable Notes
 
@@ -37,3 +35,12 @@ var weatherCondition = 'Monday: Raining cats and dogs';
 weatherCondition = 'Tuesday: Sunny';
 
 console.log(weatherCondition); 
+
+// String interpolation- is when you insert a variable into a string
+// This is an example: It prints My favorite animal: Cat to the console.
+var favoriteAnimal = 'Cat';
+console.log('My favorite animal: ' + favoriteAnimal);
+
+// Control Flow- making decisions in programming.
+// For instance, if we were making a choose-your-own-adventure game, we'd need to program a way for a user to choose which plot line they'd like to pursue. 
+// Control flow statements enable JavaScript to make those decisions by executing different code based on a condition
