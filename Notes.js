@@ -30,3 +30,10 @@ This will print 'Arya' to the console.
 // another example logs How much stuff can a variable hold? 50k pounds to console.
 var strength = '50,000 pounds';
 console.log('How much stuff can a variable hold?', strength);
+
+// How to change an existing variable's value:
+// Changes the pre-existing weatherCondition's value by setting it equal to its new value.
+var weatherCondition = 'Monday: Raining cats and dogs';
+weatherCondition = 'Tuesday: Sunny';
+
+console.log(weatherCondition); 
