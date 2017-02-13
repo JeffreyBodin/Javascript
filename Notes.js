@@ -26,3 +26,7 @@ This is a common convention in JavaScript, and is called camelCase.
 After the variable is declared, we can print the variable with: console.log(myName).
 This will print 'Arya' to the console.
 */
+
+// another example logs How much stuff can a variable hold? 50k pounds to console.
+var strength = '50,000 pounds'
+console.log('How much stuff can a variable hold?', strength);
