@@ -83,3 +83,17 @@ if (stopLight === 'red') {
 } else {
   console.log('Caution, unknown!');
 }
+
+// === checks if two things are equal in value and type (ie string, booleans, numbers), than outputs true if true
+// !== checks if two things are not equal than outputs true (b/c its checking if they are not equal)
+// && checks that both are true its called and
+// || checks that either can be true its called or 
+// ! checks that the values are opposites to each other 
+
+//Example using &&
+// Both stopLight must equal green and pedestrians equal false for the if statement to output true else it outputs false and executes the else statement.
+if (stopLight === 'green' && pedestrians === false) {
+  console.log('Go!');
+} else {
+  console.log('Stop');
+}
