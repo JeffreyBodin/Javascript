@@ -69,3 +69,17 @@ If we adjusted needCoffee to be false, only the else's console.log will run.
 
 // Escaping a character- addeding \'s inside of a '' string to added apostrophere s to a word. B/c normally another single quote ends the string this way you can add the apostrophere s inside a string withought closing off the string.
 // This again uses \ 
+
+// Else if
+// Utilize else if to add more conditions to a if/else statement
+var stopLight = 'green';
+
+if (stopLight === 'red') {
+  console.log('Stop');
+} else if (stopLight === 'yellow') {
+  console.log('Slow down');
+} else if (stopLight === 'green') {
+  console.log('Go!');
+} else {
+  console.log('Caution, unknown!');
+}
