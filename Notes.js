@@ -44,3 +44,25 @@ console.log('My favorite animal: ' + favoriteAnimal);
 // Control Flow- making decisions in programming.
 // For instance, if we were making a choose-your-own-adventure game, we'd need to program a way for a user to choose which plot line they'd like to pursue. 
 // Control flow statements enable JavaScript to make those decisions by executing different code based on a condition
+
+// Blocks - code between curly braces {}
+
+// If/Else Notes
+// if/else statements are how we can process yes/no questions programmatically
+// if/else statements have two code blocks
+//Example:
+
+var needCoffee = true;
+if (needCoffee) {
+    console.log('Finding coffee');
+} else {
+    console.log('Keep on keeping on!');
+}
+
+/*
+If the variable needCoffee is true, JavaScript will run one code block, and if a variable is false, it will run another
+needCoffee is the condition we are checking inside the if's parentheses.
+Since it is equal to true, our program will run the code between the first opening curly brace { (line 2) and the first closing curly brace } (line 4).
+It will completely ignore the else { ... } part. In this case, we'd see 'Finding coffee' log to the console.
+If we adjusted needCoffee to be false, only the else's console.log will run.
+*/
