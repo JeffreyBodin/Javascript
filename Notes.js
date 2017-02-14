@@ -66,3 +66,6 @@ Since it is equal to true, our program will run the code between the first openi
 It will completely ignore the else { ... } part. In this case, we'd see 'Finding coffee' log to the console.
 If we adjusted needCoffee to be false, only the else's console.log will run.
 */
+
+// Escaping a character- addeding \'s inside of a '' string to added apostrophere s to a word. B/c normally another single quote ends the string this way you can add the apostrophere s inside a string withought closing off the string.
+// This again uses \ 
