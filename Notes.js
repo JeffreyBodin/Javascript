@@ -85,10 +85,10 @@ if (stopLight === 'red') {
 }
 
 // === checks if two things are equal in value and type (ie string, booleans, numbers), than outputs true if true
-// !== checks if two things are not equal than outputs true (b/c its checking if they are not equal)
+// !== checks if two things are not equal in value and type, than outputs true (b/c its checking if they are not equal)
 // && checks that both are true its called and (ie if both sides are true the and statement outputs true)
 // || checks that either can be true its called or (ie if either side is true the or statement outputs true)
-// ! checks that the values on either side are not equal. (ie if either side is false the not statement outputs true.)
+// ! checks that the values on either side are not equal its called not (ie if either side is false the not statement outputs true.)
 
 //Example using &&
 // Both stopLight must equal green and pedestrians equal false for the if statement to output true else it outputs false and executes the else statement.
