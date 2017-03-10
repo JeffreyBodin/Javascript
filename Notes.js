@@ -162,6 +162,7 @@ switch (groceryItem) {
 
 
 // Functions:
+
 // They take data or variables, perform a task or set of tasks on them, and return the result.
 // Functions can be reused over and over b/c your just changing the variables/data that are plugged into the function not the function itself.
 // Example: 
@@ -183,4 +184,28 @@ pressPowerButton();
 
 pressPowerButton();
 // Output: Calculator turning off.
+
+/* Parameters are what is inside of the parentheses of the function 
+ex below: the parameter "inputNumber" is multiplied by 13 and printed to console. 
+inputNumber is just a placeholder for any number that is inputed into the parentheses of the function multiplyByThirteen
+The parameter simply sets up the function to receive an argument as its value. 
+
+Argument is the number 9 when we call multiplyByThirteen(9)
+
+Arguments are provided when I call a function, and Parameters receive Arguments as their value. 
+So, inputNumber is a parameter and its value is the argument 9. */
+
+function multiplyByThirteen(inputNumber){
+  console.log(inputNumber * 13);
+}
+
+multiplyByThirteen(9)
+// output: 117
+
+//Example:
+function takeOrder(topping) {
+  console.log('Order: pizza' + topping);
+}
+takeOrder(' topped with bacon');
+// Calls the 'Order: pizza' string interpolated with the argument's value through the topping parameter of the funtion.
 
