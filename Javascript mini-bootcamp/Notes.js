@@ -335,3 +335,188 @@ favoriteFoods.pop();
 // Introduces the .pop method which is targeting the favoriteFoods variable. (the array)
 // .pop method removes the last item off of an array.
 // So the favoriteFoods array will now contain ['Steak', 'Pineapple', 'Curry'].
+
+
+
+// Objects 
+/*
+The object user is declared just like a regular variable. 
+The object user contains multiple properties within it that all have values assigned to them. 
+The colons seperate the 'keys' from the 'values'.
+The keys on the left of the colon are used to access the values on the right of the colon.
+Properties are the keys on the left of the colon.
+Properties are a special variable that are stuck to the object. In this case they are stuck to the object user.
+Objects are like nice variables that contain a lot of information all grouped within it. 
+Ie like all of the associated information of a certain user all under one object. This is very useful for grouping related values together.
+
+Properties are always turned into strings inside of the object. So if a property was originally a number as in the example below 2 goes to '2'.
+These properties are once again the keys. Same thing.
+
+The object user is in memory so everytime it is used to add things to it etc. The same original object user is used the entire time.
+So if something is added to it the original object is just being edited in some way. 
+
+Use dot notation and bracket notation to add properties to an object.
+
+Objects are declared like variables just that they are assigned to a bracket containing properties with values of their own.
+*/
+//ex:
+
+var user = {};
+user.username = 'Ben';
+user.email = 'ben@lambdaschool.com';
+// This is a way to create a object than add properties with values to that object.
+// Uses dot notation.
+
+var user = {
+    username: 'Ben',
+    email: 'ben@lambdaschool.com',
+};
+// This is a way to create an object. By just filling out the object manually.
+// This is exactly how the above var user would look like after the properties are added to the object.
+
+
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+console.log(user.username);
+// This console.log targets user which is the object.
+// The period says that we want to access a property that is declared on the object.
+// The property username if after the period because that is the property that we want to target within the object user.
+ 
+ var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+user.sayHi();
+// This is an anonymouse function b/c the function itself does not have a name.
+// It does not need one because it is always refernced by the key sayHi (which is also a property that contains the anonymouse function).
+// This function just logs hello! to the console.
+// Also called invoking the function.
+
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+user.isPremium = true;
+// This adds the isPremium key and value of true to the object user.
+// The computer will check the object for the isPremium key and when it does not find it it will then add it to the object.
+// This is how you add properties to an existing object.
+// Uses dot notation to add a property to the object.
+
+var squares = {};
+
+squares[2] = 4;
+squares[5] = 25;
+// This adds the property 2 and 5 with the values of the square roots of those numbers as their values.
+// If console.log(squares) it outputs {'2':4, '5':25}
+// This is because they were added as properties to the object called squares.
+// The properties are now stings they are no longer intergers. Properties are always converted into strings if they were not beforhand.
+// Uses bracket notation to add a property to the object.
+// This is a way to create an object than add properties to that object.
+
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+function addProperty(object, newProperty, newValue) {
+    object[newProperty] = newValue;
+}
+
+addProperty(user, 'livesInUS', false);
+// Function addProperty passes through the user in the object slot on the far left. Then the new property takes the middle slot. And the new value of that new property takes the last slot.
+// This function defines what goes where by the commas. 
+// So, you just slot in what the function calls for in the correct slots to easily add new properties to the existing object.
+// Inside of the function object is next to newProperty within brackets becuase brackets are used to dynamically modify the object. 
+// Using dot notation with the period to target the object would not work correctly and would instead add a new property called newProperty to the object.
+// That is why bracket notation is used instead b/c this way the 'livesInUS' property is properly added as the key to the object instead of the function placeholder newProperty.
+// Try to remember to use bracket notation instead of dot notation when dealing with things like functions that have constantly changing values for their parameters/placeholders.
+
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+delete user.likesIceCream;
+// Uses delete to remove the property likesIceCream from the object.
+// Only use delete in really this specific circumstance do not use it remove parts of an array or anything else. 
+// Just use delete for removing a single property from an object for now.
+
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
+
+for (var key in user) {
+    console.log('>>>key', key);
+    console.log('>>>value', user[key])
+}
+// This is how to iterate over an object.
+// Uses a for loop to iterate over the object user. 
+// The string '>>>key' is placed before the key so that when the keys are outputed in console it prints >>>key key.
+// key will print the key's name to console. It does not need to be modifying anything becuase here we just want the name.
+// Unlike underneath for the value of the key it needs to be against the object user so that the value of the key is printed instead of just the key's name itself. 
+// The string '>>>value' is placed before the user[key] so that in console it prints >>>value value of the key.
+// user[key] is using bracket notation so that it looks for the value stored in the key of all the potential keys of the object to print to console.
+// If dot notation was used instead like user.key only a key called key would be looked for to have its value printed to the console. This is why bracket notation is used.
+
+var users = [
+{
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        var sentence = 'My username is: ' + this.username;
+        console.log(sentence);
+    }
+},
+{},
+{},
+{}
+];
+
+users[0].sayHi;
+// Now the object users is an array of objects of individual users.
+// this is the command to use to identify the specific object that it is called in.
+// So when this is used inside of the sayHi function it identifies this object the object that it is inside in order for it to run.
+// Its used in this way becuase now that the object users is an array of objects there is no way to target the indivdual objects easily. Due to it now being an array.
+// So functions inside of the objects of the array need to know what user they are targeting to run and that is why this is used.
+// this just tells the function to target the object it is written in even though that object by itself is unnamed.
+// It is a way to target an unnamed object from within that object.
+// users[0].sayHi; targets the index of 0 which is the first object with the .sayHi method that is contained within the [0] index object. And run the function.
+

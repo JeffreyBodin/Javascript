@@ -1,3 +1,14 @@
-var favoriteFoods = ['Steak', 'Mango', 'Curry'];
+var user = {
+    username: 'SunJieMing',
+    password: 'password',
+    age: 99,
+    likesIceCream: true,
+    sayHi: function() {
+        console.log('hello!');
+    }
+}
 
-console.log(favoriteFoods);
+for (var key in user) {
+    console.log('>>>key', key);
+    console.log('>>>value', user[key])
+}
