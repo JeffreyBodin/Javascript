@@ -401,6 +401,9 @@ console.log(user.username);
 }
 
 user.sayHi();
+// This is how to create methods within objects. METHODS <-------
+// Methods are functions stored as object properties and they themselves are represented within an object as a function.
+// Methods are invoked by () imediatly after the function.
 // This is an anonymouse function b/c the function itself does not have a name.
 // It does not need one because it is always refernced by the key sayHi (which is also a property that contains the anonymouse function).
 // This function just logs hello! to the console.
@@ -430,8 +433,9 @@ squares[5] = 25;
 // If console.log(squares) it outputs {'2':4, '5':25}
 // This is because they were added as properties to the object called squares.
 // The properties are now stings they are no longer intergers. Properties are always converted into strings if they were not beforhand.
-// Uses bracket notation to add a property to the object.
+// Uses bracket notation to add a property to the object. 
 // This is a way to create an object than add properties to that object.
+// Also use bracket notation to add arguments (and their values) to an object when dealing with functions and the functions objects.
 
 var user = {
     username: 'SunJieMing',
