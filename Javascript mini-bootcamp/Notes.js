@@ -114,10 +114,15 @@ var fullName = firstName + lastName;
 var fullName = firstName + ' ' + lastName;
 // Added a string with a space in the middle of firstName and lastName. Now the newly created string 'Ben Nelson' is assigned to fullName.
 
+
+
 // Functions
 /* Write using the function keyword. Just like using var to define a variable use function to define a function.
 Funciton names should be an action. Ie sayHi.
 Any variables declared within a function only lives within the function that they are declared in. They don't exist outside of that function.
+parameters are the names listed in the function definition.
+arguments are the real values passed to (and recieved by the function).
+parameters are just placeholder names for the eventual arguments (values).
 */
 // ex:
 function sayHi(){
@@ -176,6 +181,7 @@ var hisAge = 10;
 var heCanDrive = canDrive(hisAge);
 console.log(heCanDrive);
 // Returns false b/c 10 does not satisfy the if statement of age >= 16 ,so it will continue and run false.
+
 
 // If Statements
 // Uses if/else statements to do things.
@@ -468,7 +474,7 @@ var user = {
     sayHi: function() {
         console.log('hello!');
     }
-}
+};
 
 delete user.likesIceCream;
 // Uses delete to remove the property likesIceCream from the object.
