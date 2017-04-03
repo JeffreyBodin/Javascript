@@ -530,3 +530,45 @@ users[0].sayHi;
 // It is a way to target an unnamed object from within that object.
 // users[0].sayHi; targets the index of 0 which is the first object with the .sayHi method that is contained within the [0] index object. And run the function.
 
+var user = {
+    posts: [{likes: 1},
+            {likes: 2},
+            {likes: 3},
+            {likes: 4},
+            {likes: 5}],
+}; 
+
+var sum = 0;
+
+for (var i = 0; i < user.posts.length; i++) {
+    sum += user.posts[i].likes;
+}
+return sum;
+// Iterates over user's posts property, which is an array of objects each containing an integer property named likes.
+// Sums the value of each likes property.  
+// returns sum 
+// This mockup user object is similar/same/close to the homework problem sumUserPostLikes on homework 3.
+// This is basically what the input was for that problem without the extra properties that are alongside the likes property.
+
+var user = {
+  posts: [{post: {likes: 1}},
+          {post: {likes: 2}},
+          {post: {likes: 3}},
+          {post: {likes: 4}},
+          {post: {likes: 5}}],
+};
+
+console.log(user.posts);
+
+
+var sum = 0;
+
+for (var i = 0; i < user.posts.length; i++) {
+  console.log(user.posts[i].post.likes);  
+  sum += user.posts[i].post.likes;
+}
+// Iterates over user's posts property, which is an array of post objects each containing an integer property named likes.
+// Sums the value of each likes property.  
+// returns sum
+// This was my original mockup of the homework problems user object. I thought that there was a literal post property.
+// And that this post property contained the interger property likes. However, there was never any post property and the above mockup is the correct users object from the homework. 
