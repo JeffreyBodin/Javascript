@@ -395,8 +395,35 @@ console.log(user.username);
 // This console.log targets user which is the object.
 // The period says that we want to access a property that is declared on the object.
 // The property username if after the period because that is the property that we want to target within the object user.
- 
- var user = {
+
+var user = {
+  email: 'ben@lambdaschool.com',
+};
+
+if (user['email']) {
+    return true;
+  } else {
+    return false;
+  }
+
+var user = {
+  email: '',
+};
+// Outputs true.
+// Is true because email's value is a string with an email in it.
+// Note it is not nessesary for the string to be an email just for the string to be filled in and therefore have a value.
+// This is how to check if a property of an object has a value.
+
+if (user['email']) {
+    return true;
+  } else {
+    return false;
+  }
+// Outputs false.
+// Is false because email has a value of an empty string.
+// This is how to check if a property of an object has a value. Take note.
+
+var user = {
     username: 'SunJieMing',
     password: 'password',
     age: 99,
@@ -414,6 +441,35 @@ user.sayHi();
 // It does not need one because it is always refernced by the key sayHi (which is also a property that contains the anonymouse function).
 // This function just logs hello! to the console.
 // Also called invoking the function.
+
+var storeItem = {
+    price: 80,
+    discountPercentage: 0.1
+};
+
+storeItem.calculateDiscountPrice = function() {
+    var discount = this.price * this.discountPercentage;
+    var discountPrice = this.price - discount;
+    return discountPrice;
+};
+// Adds the method calculateDiscountPrice to the storeItem object.
+// Another example on how to add methods to an already existing object using dot notation to add the method to the object.
+// Uses this to target the current object that the method is contained in. Once the method is added of course is when it uses this.
+// this targets whatever object that it is inside of so if I do not know the name of the object that it is going to be inside of it is better to use this. 
+// this also helps to make more reusable methods since this targets the object that it is contained in. Makes it easy to potentially reuse this method on other objects since I have used this. 
+
+var storeItem = {
+    price: 80,
+    discountPercentage: 0.1
+};
+
+storeItem.calculateDiscountPrice = function() {
+    var discount = storeItem.price * storeItem.discountPercentage;
+    var discountPrice = storeItem.price - discount;
+    return discountPrice;
+};
+// Same as above example just with storeItem used to target the storeItem object.
+// Shows equivalency between this and the name of the object (storeItem) in targeting the object that the method is contained in.
 
 var user = {
     username: 'SunJieMing',
