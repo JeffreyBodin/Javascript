@@ -664,16 +664,14 @@ function myFunction(options) {
     if (!options.option1) console.log('no option 1');
     if (!options.option2) console.log('no option 2');
 }
-
-
-// More function notes
-
 myFunction({option1: true});
 // In this the option1 has a true value. So, when this is passed in the first if statement it makes that if statement true which is then convereted to false b/c of the logical Not reversing the value.
 // So the first if statement becomes false b/c it is true.
 // And the second if statement becomes true b/c it is false. B/c option two was not passed in making it false which then changed to true.
 // This satisfies the second if statement logging to console 'no option 2' b/c it was not passed in.
 
+
+// More function notes
 
 function sumNumbers() {
     var total = 0;
