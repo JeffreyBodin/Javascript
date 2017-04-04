@@ -1,20 +1,25 @@
-require('dotenv').config({path: '/C:/Users/jeffr/Documents/GitHub/Javascript/Projects/snoowrap test app/config.env'});
+require('dotenv').config();
 const snoowrap = require('snoowrap');
-
+// '/C:/Users/jeffr/Documents/GitHub/Javascript/Projects/snoowrap test app/config.env'
+// 'C:\Users\jeffr\Documents\GitHub\Javascript\Projects\snoowrap test app'
+// {path: '/C:/Users/jeffr/Documents/GitHub/Javascript/Projects/snoowrap test app'}
 
 const r = new snoowrap({
     userAgent: 'myApp v1.0.0 by /u/waldytest',
-    clientId: process.env.ENVCLIENT_ID,
-    clientSecret: process.env.ENVCLIENT_SECRET,
-    refreshToken: process.env.ENVREFRESH_TOKEN,
-});
+    clientId: ,
+    clientSecret: ,
+    refreshToken: ,
+}); 
 
-// Submitting a link to a subreddit
-r.getSubreddit('subreddit example').submitLink({
-  title: 'Post title',
-  url: 'https://i.imgur.com/n5iOc72.gifv'
+/*
+const r = new snoowrap({
+  userAgent: 'myApp v1.0.0 by /u/waldytest',
+  clientId: process.env.ENVCLIENTID,
+  clientSecret: process.env.ENVCLIENTSECRET,
+  username: process.env.WTESTUSERNAME,
+  password: process.env.WTESTPASSWORD,
 });
-
+*/
 
 // Printing a list of the titles on a thread
-r.getHot().map(post => post.title).then(console.log);
+r.getHot('The_Donald').map(post => post.title).then(console.log);
