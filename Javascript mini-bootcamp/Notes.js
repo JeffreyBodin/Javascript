@@ -627,4 +627,138 @@ for (var i = 0; i < user.posts.length; i++) {
 // Sums the value of each likes property.  
 // returns sum
 // This was my original mockup of the homework problems user object. I thought that there was a literal post property.
-// And that this post property contained the interger property likes. However, there was never any post property and the above mockup is the correct users object from the homework. 
+// And that this post property contained the interger property likes. However, there was never any post property and the above mockup is the correct users object from the homework.
+
+ // Truthy and Falsy
+ // In javascript every value has either a true value or a false value. 
+ // ex:
+
+ if (true) console.log('hi!');
+ // Is true b/c it is a true boolean value.
+ // Logs to console.
+
+if (10) console.log('hi');
+// Is true b/c numbers by themselves have truthy value.
+
+ if (0) console.log('hi');
+ // Is false b/c 0 has a falsy value to itself and therefore it does not satisfy the if statement. 
+ // Does not log to console.
+
+ if (!false) console.log('hi');
+ // Is true b/c ! reverses the true/false value of what it is attached to. So, false is now true and it satisfies the if statement logging to console.
+
+if ('') console.log('hi');
+// Is false b/c an empty string is a false value.
+
+if ('hhhhh') console.log('hi');
+// Is true b/c the filled in string has a truthy value.
+
+function myFunction(x, y) {
+    if (!x) return console.log('hi');
+    if (!y) return console.log('error!')
+}
+// Tests if x is not passed in return error 
+
+
+function myFunction(options) {
+    if (!options.option1) console.log('no option 1');
+    if (!options.option2) console.log('no option 2');
+}
+
+
+// More function notes
+
+myFunction({option1: true});
+// In this the option1 has a true value. So, when this is passed in the first if statement it makes that if statement true which is then convereted to false b/c of the logical Not reversing the value.
+// So the first if statement becomes false b/c it is true.
+// And the second if statement becomes true b/c it is false. B/c option two was not passed in making it false which then changed to true.
+// This satisfies the second if statement logging to console 'no option 2' b/c it was not passed in.
+
+
+function sumNumbers() {
+    var total = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sumTotal += arguments[i];
+    }
+    console.log(sumTotal);
+}
+
+sumNumbers(1, 2, 3, 4, 5, 6, 6, 6, 6, 9);
+sumNumbers(0);
+// sumNumbers function sums the numbers that are passed in as arguments and logs result to console.
+// Instead of passing in an array it can pass in an ulimited number of arguments.
+// We want to be able to deal with an unknown amount of arguments that could pass in this function.
+// Uses the arguments array like object to iterate over the arguments that are passed in adding them together.
+// arguments is like an array it has a length and indexcies but you can't do .push, .pop, etc.. 
+// arguments can be iterated over like above b/c of the fact that it has indexcies like an array.
+
+
+// Callback Function
+//  is where you pass a function into another function as an argument.
+// ex:
+
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.push(6);
+numbers.forEach(function(num) {
+    console.log(num);
+});
+// forEach is a method that we pass in a function as its argument.
+// forEach will take each item of the array numbers and pass in that number as its num argument and log each result to console.
+// This is the preffered/best way to iterate over arrays MAKE NOTE OF THIS. 
+
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.push(6);
+numbers.forEach(function(num, i) {
+    console.log(num, i);
+});
+// Now it logs the value of each element of the array with its corresponding index to the console.
+
+function invokeCallback(cb) {
+    cb();
+}
+
+function sayHi() {
+    console.log('hi!')
+}
+
+invokeCallback(sayHi);
+// cb is a reference to the function that is passed in as the argument. cb = call back 
+// In the invokeCallback sayHi is not invoked with paraenthesis like sayHi() this is so that it is just passed in as a value.
+// sayHi passes in as the argument of invokeCallback above where the function is declared as cb. 
+// sayHi is invoked when it passes through as cb(); b/c cb is the placeholder waiting for the argument (which is sayHi) to pass through.
+// sayHi happends to be a function so once it is passed in next to the (); it is invoked.
+
+function invokeCallback(cb) {
+    cb();
+}
+
+function sayHi() {
+    console.log('hi!')
+}
+
+function sayNiHao() {
+    console.log('ni hao!');
+}
+invokeCallback(sayHi);
+invokeCallback(sayNiHao);
+// This time sayHi and sayNiHao are passed in as arguments and are both invoked as they pass through being logged to console.
+
+var numbers = [1, 2, 3, 4, 5];
+
+var sum = numbers.reduce(function(runningTotal, num) {
+   return runningTotal += num;
+});
+console.log(sum);
+// .reduce loops over all the numbers in the array one at a time as the argument num. 
+// num gets added to the runningTotal argument each time it is passed through.
+// So everytime .reduce passes in a new argument for num that num is added to the runningTotal argument.  
+// runningTotal (or the agregation) is a value that is increased each time the function is invoked and num is added to it. 
+// Therefore it easily sums all of the numbers in the array and returns the sum.
+
+// map()
+// ex:
+var numbers = [1, 2, 3, 4, 5];
+
+numbers
