@@ -669,6 +669,9 @@ myFunction({option1: true});
 // So the first if statement becomes false b/c it is true.
 // And the second if statement becomes true b/c it is false. B/c option two was not passed in making it false which then changed to true.
 // This satisfies the second if statement logging to console 'no option 2' b/c it was not passed in.
+// This is basically a check for the option that was not passed in b/c the object that is passed in will not print to console.
+// And the option that does not pass in will have its value reversed to true and will print to console.
+// Good for checking for errors and such. Try to think of various ways that this can be implemented in.
 
 
 // More function notes
