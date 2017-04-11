@@ -758,10 +758,12 @@ console.log(sum);
 // runningTotal (or the agregation) is a value that is increased each time the function is invoked and num is added to it. 
 // Therefore it easily sums all of the numbers in the array and returns the sum.
 
-// map()
+// .map()
 /*
 map() calls on each item in the array and passes them into the function
 once the element is passed into the function some transformation will be done on it and whatever is returned will replace that element in the array.
+Use a callback function (passed in the .map() function) to invoke the desired change to each element of the array.
+Since .map() by itself only iterates over the each element of the array. The callback function exists to make a change to the element that .map() is iterating over.
 */
 // ex:
 
@@ -774,6 +776,7 @@ var newNumbers = numbers.map(function(num){
 console.log(newNumbers);
 // This uses .map() to iterate over the numbers array and replace each element with the string 'hi'
 // newNumbers variable is assigned this new array of 'hi' strings
+// Uses a callback function which is passed in the .map() function to invoke the desired change to each element of the array.
 
 var numbers = [1, 2, 3, 4, 5];
 
