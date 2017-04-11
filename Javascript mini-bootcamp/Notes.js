@@ -759,7 +759,28 @@ console.log(sum);
 // Therefore it easily sums all of the numbers in the array and returns the sum.
 
 // map()
+/*
+map() calls on each item in the array and passes them into the function
+once the element is passed into the function some transformation will be done on it and whatever is returned will replace that element in the array.
+*/
 // ex:
+
 var numbers = [1, 2, 3, 4, 5];
 
-numbers
+var newNumbers = numbers.map(function(num){
+    return 'hi';
+});
+
+console.log(newNumbers);
+// This uses .map() to iterate over the numbers array and replace each element with the string 'hi'
+// newNumbers variable is assigned this new array of 'hi' strings
+
+var numbers = [1, 2, 3, 4, 5];
+
+var squares = numbers.map(function(num){
+    return num * num;
+});
+
+console.log(squares);
+// This uses .map() to iterate over the numbers array and replace each element with the square of that element.
+// B/c num * num makes the element times itself by itself returning the square as the new value in the squares array.
