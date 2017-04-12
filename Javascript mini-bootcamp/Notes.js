@@ -758,6 +758,7 @@ console.log(sum);
 // runningTotal (or the agregation) is a value that is increased each time the function is invoked and num is added to it. 
 // Therefore it easily sums all of the numbers in the array and returns the sum.
 
+
 // .map()
 /*
 map() calls on each item in the array and passes them into the function
@@ -787,3 +788,49 @@ var squares = numbers.map(function(num){
 console.log(squares);
 // This uses .map() to iterate over the numbers array and replace each element with the square of that element.
 // B/c num * num makes the element times itself by itself returning the square as the new value in the squares array.
+
+
+
+// Constructors
+/*
+If you have to use a object over and over again like multiple of the same object to fill with data use constructor functions.
+ie user data, etc.
+Essentially you make a template to be used to recreate more objects to fill with data.
+Constructors are always capitilized
+Use the new keyword before the constructor function to create a new object assigned to whatever variable you have declared for said new object.
+*/
+// ex:
+
+function User(options) {
+    this.username = options.username;
+    this.password = options.password;
+}
+
+var ben = new User({ // This is the same as.
+    username: 'SunJieMing',
+    password: 'I love JS!',
+});
+var ben = new User({username: 'SunJieMing', password: 'I love JS!',}); // This. Looks more like arguements now to be passed in the function.
+// User() is a constructor function for making new objects of users.
+// Function User takes in an options object as the parameter of the function. 
+// this specifies the object that it is contained in and assigns the passed in username and password properties to the new objects username and password properties.
+// User() returns the new object with the new properties.
+// This new anonymous object is then assigned to var ben creating a object consisting of the users username and password.
+// Think of the username and password properties that are passed in as arguments b/c they are arguments that are passed in.
+  
+
+function encryptPassword(password) {
+    return 'sdafhskjfhkalsjdhflskdf';
+}
+
+function User(options) {
+    this.username = options.username;
+    this.password = encyptPassword(options.password);
+}
+
+var ben = new User({
+    username: 'SunJieMing',
+    password: 'I love JS!',
+});
+
+console.log()
