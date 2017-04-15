@@ -830,7 +830,121 @@ function User(options) {
 
 var ben = new User({
     username: 'SunJieMing',
-    password: 'I love JS!',
+    password: 'I love JS!'
+});
+// This is like if the user that we are creating needed to have a password encrypted.
+// Like the example he gave of that company he worked for the constructor function would have within it many methods.
+// These methods would work on the given user data to ie validate a username to check against the companies database to see if it is available.
+// Or validate that the email provided by the user is real, or that it has an @ symbol in the correct place. Stuff like that.
+// These various methods would work on the supplied properties that the user inputed than create a new user object to store all of this data.
+// Like encrypting a users password for storage or validating a password whenever someone logs in against the users password stored in the database.
+// All different uses for constructor functions.
+
+function Cat(options) {
+    this.name = options.name;
+    this.age = options.age;
+    this.meow = function() {
+        console.log('meow!');
+    }
+}
+
+var snowballII = new Cat({
+    name: 'Snowball II',
+    age: 5
 });
 
-console.log()
+snowballII.meow();
+// Creates a constructor function for cats.
+// It assigns the provided name and age properties to the new cat object. 
+// Also assigns the meow method to the new cat object.
+// Creates a new cat snowballII using new Cat() constructor.
+// The final line invokes the meow method of the newly created cat object.
+
+function Cat(options) {
+    this.name = options.name;
+    this.age = options.age;
+    this.meow = function() {
+        console.log('meow! My name is ' + this.name);
+    }
+}
+
+var snowballII = new Cat({
+    name: 'Snowball II',
+    age: 5
+});
+
+snowballII.meow();
+// The meow method in this constructor is changed from the previous one.
+// This meow method logs a string containing the cat objects name property. 
+// this keyword targets the object it is contained in which happends to have a name property.
+// The value of the new cat objects name property is concatenated to the rest of the meow methods string.
+// Than it is logged to console.
+// this targets what is to the left of the dot that the meow method is attached to. 
+// So that this is the object that the this inside of meow method targets. 
+// Because the computer sees this and it than tries to find what is this object.
+// To do that it looks to the left of the dot to find the correct object to target. 
+
+
+
+// Prototypes
+// ex:
+function Cat(options) {
+    this.name = options.name;
+    this.age = options.age;
+}
+
+Cat.prototype.meow = function() {
+    console.log('meow! my name is ' + this.name);
+};
+
+var snowballII = new Cat({
+    name: 'Snowball II',
+    age: 5
+});
+
+snowballII.meow();
+// This is how to attach prototypes to functions.
+// The prototype is attached to the Cat() constructor function. The meow method is attached to the prototype.
+// The prototype has a single function (the meow method). This is stored in memory.
+// All of the cat objects remember the prototypes that are attached to thier constructor.
+// So rather than all of the many cat objects containing a function that will run they just access the prototype method meow that is 
+// attached to thier constructor. So all of the cat objects use this same function instead of running thier own functions.
+// This will speed up the program considerably.
+// When snowballII invokes the meow method the computer looks to see that if it contains the meow method. 
+// It doesnt so it then checks to see if the Cat() constructor contains any prototypes. It does so the meow method is then invoked.
+
+
+Array.prototype
+// Array is a built in javascript keyword that behind the scenes actually creates the arrays that you create. 
+// So when I declare an array behind the scenes this Array.prototype is used to make it.
+// Uppercase array is the reserved keyword that creates the lowercase arrays that I make. Never use uppercase Array as one of my arrays.
+
+Array.prototype.sayHi = function() {
+    console.log('I\'m on the array!');
+}
+
+var array = [1, 2, 3];
+array.sayHi();
+// the \ escapes the ' so that it does not close out the string right there and instead just acts as an apostrophee.
+// This uses the Array reserved keyword that effects all the arrays to add the sayHi() method to all of the declared arrays.
+// Since Array creates all the arrays adding a method onto it using prototype adds the same method to all created arrays.
+// That is why array.sayHi() invokes the sayHi method.
+
+
+// Closure
+/*
+Just like functions can pass in a callback functions. Functions can also return functions.
+*/
+
+function outer() {
+    return function() {
+        console.log('hi there!');
+    };
+}
+
+var inner = outer();
+inner();
+// This shows a function returning another function when invoking said function.
+// The outer function is invoked (when it is to be assigned to inner) and returns its anonymous function.
+// This anonymous function is what will actually be assigned to inner. Not the outer function.
+// inner is lastly invoked and logs 'hi there!' to console.
