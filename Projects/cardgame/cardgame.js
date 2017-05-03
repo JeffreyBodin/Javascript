@@ -1,6 +1,7 @@
 /* A "standard" deck of playing cards consists of 52 Cards in each of the 4 suits of Spades, Hearts, Diamonds, and Clubs. 
 Each suit contains 13 cards: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. */
 
+// Array of fifty-two cards.
 var deckOfCards = [
     {card: 'Ace of Spades', cardValue: 1},
     {card: 'Two of Spades', cardValue: 2},
@@ -56,6 +57,7 @@ var deckOfCards = [
     {card: 'King of Clubs', cardValue: 13},
     ];
 
+// Logs each object's cardValue property to the console.
 deckOfCards.forEach(function(object){
     console.log(object.cardValue);
 })
