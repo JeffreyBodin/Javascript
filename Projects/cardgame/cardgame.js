@@ -55,3 +55,7 @@ var deckOfCards = [
     {card: 'Queen of Clubs', cardValue: 12},
     {card: 'King of Clubs', cardValue: 13},
     ];
+
+deckOfCards.forEach(function(object){
+    console.log(object.cardValue);
+})
