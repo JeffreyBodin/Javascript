@@ -2,7 +2,7 @@
 Each suit contains 13 cards: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. */
 
 var deckOfCards = [
-    {card: 'Ace of Spades', cardValue: 1 || 14},
+    {card: 'Ace of Spades', cardValue: 1},
     {card: 'Two of Spades', cardValue: 2},
     {card: 'Three of Spades', cardValue: 3},
     {card: 'Four of Spades', cardValue: 4},
@@ -15,7 +15,7 @@ var deckOfCards = [
     {card: 'Jack of Spades', cardValue: 11},
     {card: 'Queen of Spades', cardValue: 12},
     {card: 'King of Spades', cardValue: 13},
-    {card: 'Ace of Hearts', cardValue: 1 || 14},
+    {card: 'Ace of Hearts', cardValue: 1},
     {card: 'Two of Hearts', cardValue: 2},
     {card: 'Three of Hearts', cardValue: 3},
     {card: 'Four of Hearts', cardValue: 4},
@@ -28,7 +28,7 @@ var deckOfCards = [
     {card: 'Jack of Hearts', cardValue: 11},
     {card: 'Queen of Hearts', cardValue: 12},
     {card: 'King of Hearts', cardValue: 13},
-    {card: 'Ace of Diamonds', cardValue: 1 || 14},
+    {card: 'Ace of Diamonds', cardValue: 1},
     {card: 'Two of Diamonds', cardValue: 2},
     {card: 'Three of Diamonds', cardValue: 3},
     {card: 'Four of Diamonds', cardValue: 4},
@@ -41,7 +41,7 @@ var deckOfCards = [
     {card: 'Jack of Diamonds', cardValue: 11},
     {card: 'Queen of Diamonds', cardValue: 12},
     {card: 'King of Diamonds', cardValue: 13},
-    {card: 'Ace of Clubs', cardValue: 1 || 14},
+    {card: 'Ace of Clubs', cardValue: 1},
     {card: 'Two of Clubs', cardValue: 2},
     {card: 'Three of Clubs', cardValue: 3},
     {card: 'Four of Clubs', cardValue: 4},
