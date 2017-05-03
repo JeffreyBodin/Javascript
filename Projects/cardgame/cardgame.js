@@ -62,17 +62,21 @@ deckOfCards.forEach(function(object){
     console.log(object.cardValue);
 })
 
+
+// compareFunctions for use with the .sort() method.
+
+// Sorts by the difference of two card values in ascending order. 
 function sortByCardValue(a, b) {
     return a.cardValue - b.cardValue;
 }
-
+// Sorts by the difference of two card string length values in ascending order.
 function sortByCardName(a, b) {
     var nameA = a.card.length;
     var nameB = b.card.length;
     return nameA - nameB;
 }
 
-// This one was successful.
+// This one was successful. Shuffles the deck and logs to console.
 console.log(deckOfCards.sort());
 // This was not.
 deckOfCards.sort(sortByCardValue).then(sort(sortByCardName)).then(console.log);
