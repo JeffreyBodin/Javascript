@@ -61,3 +61,18 @@ var deckOfCards = [
 deckOfCards.forEach(function(object){
     console.log(object.cardValue);
 })
+
+function sortByCardValue(a, b) {
+    return a.cardValue - b.cardValue;
+}
+
+function sortByCardName(a, b) {
+    var nameA = a.card.length;
+    var nameB = b.card.length;
+    return nameA - nameB;
+}
+
+// This one was successful.
+console.log(deckOfCards.sort());
+// This was not.
+deckOfCards.sort(sortByCardValue).then(sort(sortByCardName)).then(console.log);
