@@ -20,7 +20,7 @@ Regular files like .js files will be listed as: "homework.js" they will contain 
 */
 
 // Git Notes
-/* Makes a copy to a repository by forking the repository. This creates a copy to my account that is independant from the master copy.
+/* Makes a copy to a repository by forking the repository. This creates a copy to my account that is independent from the master copy.
 If I want to suggest a change to the master copy I can make a change and then submit a pull request and if they like my change they can merge my copy into the master. This applies the fix.
 Git is commonly used as a BEST PRACTICE version control. 
 Commit is like a hardsave at that point in time. You can restort to previous saves to previous versions before that commit. Commits are savepoints.
@@ -944,7 +944,70 @@ function outer() {
 
 var inner = outer();
 inner();
+
+
 // This shows a function returning another function when invoking said function.
-// The outer function is invoked (when it is to be assigned to inner) and returns its anonymous function.
-// This anonymous function is what will actually be assigned to inner. Not the outer function.
+// The inner() function is invoked and returns outer's anonymous function.
+// The anonymous function is what is actually assigned to inner(). 
+// B/c outer() just returns the anonymous function.
 // inner is lastly invoked and logs 'hi there!' to console.
+// inner() from above ^ is essentially this 
+var inner = function() {
+    console.log('hi there!');
+};
+
+
+
+// Function Scope 
+// This determines how the code can interact with other code between varrying levels of a nested function.
+// Ie. A inner nested function can see itself and the levels outside itself. 
+// It cannot look within (inner) itself to see an inner function.
+// Just as the outer function that it can observe cannot look within itself and observe the inner function.
+// This is especially important with variables, variable names, and the values of variables.
+
+var x = 5;
+
+function outer() {
+    x;
+    var y = 10;
+    function inner() {
+        x;
+        y;
+        var z = 15;
+    }
+}
+// The above outer() function demonstrates the conscept of function scope.
+// var x is declared, with a value of 5, outside the outer() function.
+// outer() can see the x variable that is outside of it.
+// It can also manipulate this variable independent of the actual variable x that resides outside of outer().
+// var y is declared within outer(). This cannot be seen by other functions outside of outer().
+// So, this y variable is completly independent of any other varible y's in the rest of the code. Just like var x.
+// inner() resides within outer() and it has the same rules on scope as outer(). 
+// Any of inner()'s declared variables (like z) can likewise not be observed/changed/interacted with by functions outside of itself.
+// Only functions inside of inner() could interact with inner()'s variables etc. 
+// So on and so forth until the innermost function.
+
+
+
+// Closures
+// Closures are functions that refer to independent (free) variables.
+// free variables - variables that are used lovally, but defined in an enclosing scope.
+// These functions 'remember' the enviroment in which they were created.
+
+function outer() {
+    var x = 10;
+    return function() {
+        console.log(x);
+    }; // This needs a ; because it is a statement of the outer() function.
+}
+
+var inner = function() {
+    console.log(x);
+}; // ; because declaring a variable.
+
+inner(); // Last line invokes the inner() function.
+// On invoking inner() when the code is run it will find inner() and look within it to the function the returns console.log(x).
+// But it will not find a declared x. Instead of erroring Javascript will look elsewhere for another function that may have declared x.
+// JS remembers that console.log(x) first came from the outer function. 
+// JS will then find x, return x's value, and log x's value to the console.
+// This is an example of closures.
