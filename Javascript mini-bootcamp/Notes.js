@@ -931,7 +931,9 @@ array.sayHi();
 // That is why array.sayHi() invokes the sayHi method.
 
 
-// Closure
+
+
+// Closures
 /*
 Just like functions can pass in a callback functions. Functions can also return functions.
 */
@@ -958,7 +960,7 @@ var inner = function() {
 
 
 
-// Function Scope 
+// Function Scope - Scope
 // This determines how the code can interact with other code between varrying levels of a nested function.
 // Ie. A inner nested function can see itself and the levels outside itself. 
 // It cannot look within (inner) itself to see an inner function.
@@ -989,10 +991,13 @@ function outer() {
 
 
 
-// Closures
+// Closures - notes
 // Closures are functions that refer to independent (free) variables.
-// free variables - variables that are used lovally, but defined in an enclosing scope.
+// free variables - variables that are used locally, but defined in an enclosing scope.
 // These functions 'remember' the enviroment in which they were created.
+// Idea that if you return a function from a function the returned function remembers the scope that it was returned from.
+// So the returned function remembers  the scope from where it was written.
+
 
 function outer() {
     var x = 10;
@@ -1011,3 +1016,77 @@ inner(); // Last line invokes the inner() function.
 // JS remembers that console.log(x) first came from the outer function. 
 // JS will then find x, return x's value, and log x's value to the console.
 // This is an example of closures.
+
+
+function limitFunctionCallCount(cb) {
+    return function() {
+        cb(); // callback function
+    };
+}
+
+function sayHi() {
+    console.log('hi!');
+}
+
+var newSayHi = limitFunctionCallCount(sayHi); 
+
+newSayHi();
+// On run the above will invoke the newSayHi() function.
+// newSayHi() equals invoking limitFunctionCallCount() while passing through sayHi as the argument.
+// The sayHi() function becomes the callback function that is returned within the limitFunctionCallCount().
+// So the end result on invoking newSayHi(); is to return sayHi() as the cb() and invoke sayHi() logging 'hi!' to the console.
+// workflow 
+// The comp essentially checks newSayHi() on invoking it. Then goes up to limitFunctionCallCount() to satisfy the passing of the arg as cb().
+// Then returning said arg as cb() to invoke the arg. This satisfies the initial invoking of newSayHi().
+
+
+function limitFunctionCallCount(cb, limit) {
+    var callCount = 0;
+    return function() {
+        if (callCount >= limit) return; // 1 ln if statement where if callCount greater= the passed in limit return that many callbacks.
+        callCount++;
+        cb();
+    };
+}
+
+function sayHi() {
+    console.log('hi!');
+}
+
+var newSayHi = limitFunctionCallCount(sayHi, 5); 
+
+newSayHi();
+// Shows how to limit the amount of callbacks in a cb function using an if statement w/passed in limit.
+// callCount++ increments up to >= the value of the passed in limit. 
+// Then once the if statement is satisfied the cb() is return equal to the value of the callCount variable (and subsequent limit value).
+// Limits note this for later.
+
+
+
+
+// Recursion
+/*
+Essentially another way to iterrating.
+Another way to loop.
+For large/complicated functions its usually easier to use recursion to loop instead of using a for loop.
+
+Base Case - defined condition/value that stops the loop from being infinite. 
+Ie. the length of an array w/for loops and arrays.
+*/
+
+
+function nFibbonacci(n) {
+    if (n < 3) return 1;
+    return nFibbonacci(n - 2) + nFibbonacci(n - 1)
+}
+
+var result = nFibbonacci(30); // assigns invoking nFibbonacci w/30 as the arg. So, 30th number of the sequence.
+
+console.log(result); // logs 832040  
+// Returns the value of the nth number in the Fibbonacci sequence.
+// Ie. 1, 1, 2, 3, 5, 8, 13, 21.
+// Each number is the sum of the two numbers the precede it.
+// The base case is the if statement. Where if n < 3 return 1. This keeps n from being subtracted infinitely smaller.
+// nFibbonacci() calls itself inside of itself.
+// returns the passed in arg minus 2 plus passed in arg minus 1 in some crazy loop until the value is found... maybe?
+// Example of a recursive function. 
