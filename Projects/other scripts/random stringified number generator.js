@@ -16,8 +16,7 @@ var integerR = getInt(1, 100);
 //console.log(integerR); For testing purposes.
 
 function stringifyInteger(integer) {
-  let string = '';
-  return integer = string + integer;
+    return integer += '', integer;
 }
 
 console.log(stringifyInteger(integerR));
