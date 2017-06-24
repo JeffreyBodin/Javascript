@@ -330,3 +330,50 @@ $('.skillset');
 .hide()
 // Is a jQuery function that adds CSS property display: none to whichever DOM element it is being called on.
 // This makes the page fade out by default. To be faded in later using .fadeIn(timeinmilliseconds). Default time is 400s.
+// .show() is opposite command to counterpart hide. It changes CSS property to something visible.
+
+
+.on('click', function() { ... })
+
+$('.example-class').on('click', function() {
+  // Same as above different way of writing
+});
+// Adds a listener to the selector. When clicked will execute the code within its block.
+// Note that the click listener does not have a period in front of it like the DOM selector things do to target them.
+
+
+$('example-class').toggle();
+// .toggle() shows/hides a selected element.
+
+
+$('.example-class').toggleClass('active')
+// .toggleClass('classthatistoggled') jQuery funciton for toggling a Css class on the selector that its connected to.
+// If the element that is selected has the CSS class applied to it toggleClass will remove it/add it vice versa.
+// toggleClass does not require use of period before 'active' b/c it is already expecting a CSS class. If it was not expecting CSS class then you'd need the period.
+
+
+$(this)
+// Works just like regular this in js to refer to the promised result of the callback function within the scope of said function.
+// Ie a certain class is initialy selected $(this) can simply be used within the scope of said selection to reference it with further statements.
+// Note abscence of '. ' CSS class selection formating. this is just written like normal this as it normally is as a keyword.
+// Also makes it so that if another class is selected elsewhere by user clicking it will override the inital selection and inoke changes on the new callback to this.
+
+
+$('.item-one').next().hide();
+// .next() selects the element following the element that it is called on. 
+// Ie the element that is down within the scope of the preceding element, or if .next is called on the last element within the scope of whatever html section where in the next element selectable.
+// Selects the next direct element.
+
+
+$('.my-selector').text('Hello world!');
+// .text() attaches directly to a jQuery selector
+// on calling .text() it will permanently change the text of the selected string to whatever string is passed through as it's argument.
+// IE in this case it changes the selector's existing string to 'Hello World!' on call.
+
+$('.example-class').slideToggle(400);
+// .slideToggle(timemilliseconds) animates an element's entrance and exit.
+// 400 miliseconds is the default transistion time.
+
+//finshed codeacademy js course 6/24/17
+
+
