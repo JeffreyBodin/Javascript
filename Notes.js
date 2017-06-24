@@ -211,8 +211,21 @@ takeOrder(' topped with bacon');
 
 
 // String Charecter Interactions
+
 var hello = 'Hello World';
 console.log(hello[6]);
 // Output: W 
 // This is due to how JS internally store strings similarly to how it stores arrays.
 // Therefore invidual charecters of JS strings are interactable similar to the elements of an array. 
+
+
+
+
+// For Loops Ex Iterating Backwards through an array
+
+var vacationSpots = ['Moon', 'Sun', 'Mars'];
+
+for (var i = vacationSpots.length - 1; i >= 0; i--) {
+  console.log('I would love to visit ' + vacationSpots[i]);
+}
+// Example shows how to iterate backwards through the last element of an array to the first element of the array.
