@@ -209,3 +209,10 @@ function takeOrder(topping) {
 takeOrder(' topped with bacon');
 // Calls the 'Order: pizza' string interpolated with the argument's value through the topping parameter of the funtion.
 
+
+// String Charecter Interactions
+var hello = 'Hello World';
+console.log(hello[6]);
+// Output: W 
+// This is due to how JS internally store strings similarly to how it stores arrays.
+// Therefore invidual charecters of JS strings are interactable similar to the elements of an array. 
