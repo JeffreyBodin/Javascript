@@ -210,6 +210,8 @@ takeOrder(' topped with bacon');
 // Calls the 'Order: pizza' string interpolated with the argument's value through the topping parameter of the funtion.
 
 
+
+
 // String Charecter Interactions
 
 var hello = 'Hello World';
@@ -221,11 +223,110 @@ console.log(hello[6]);
 
 
 
-// For Loops Ex Iterating Backwards through an array
+// For Loops 
 
+// Ex Iterating Backwards through an array
 var vacationSpots = ['Moon', 'Sun', 'Mars'];
 
 for (var i = vacationSpots.length - 1; i >= 0; i--) {
   console.log('I would love to visit ' + vacationSpots[i]);
 }
 // Example shows how to iterate backwards through the last element of an array to the first element of the array.
+
+
+// Example comparing the contents of two arrays using a for loop.
+
+var myPlaces = ['Moon', 'Sun', 'Mars'];
+var friendPlaces = ['Moon', 'Jupiter', 'Mars'];
+
+for (var i = 0; i < myPlaces.length; i++) {
+  console.log(myPlaces[i]);
+  for (var j = 0; j < friendPlaces.length; j++) {
+    if (myPlaces[i] === friendPlaces[j]) {
+      console.log(myPlaces[i] === friendPlaces[j]);
+    }
+  }
+}
+// Loops the entire contents of friendPlaces after the first element, continuing for each index, of myPlaces is looped.
+// This allows comparison of each element of myPlaces against the entirity of friendPlaces.
+// Utilizes an if statement to log to console any strings shared in common between each array, followed by true. 
+// True indicates if strings are shared. Done using the hard === comparison passed in the console.log.
+
+
+
+
+// While Loops
+// Used when there is N times required to loop.
+// Contrary to a known limitation of loops required, ie array.length, with for loops.
+
+// Example:
+
+while (condition) {
+  // code block that loops until condition is false
+}
+// As long as the statement evaluates to true the while loop will continue to loop.
+// Statement must evaluate to false for the while loop to stop. Unless stopped some other way.
+
+
+var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
+var currentCard = 'Heart';
+
+while (currentCard !== 'Spade') {
+  console.log(currentCard);
+  
+  var randomNumber = Math.floor(Math.random() * cards.length);
+  
+  currentCard = cards[randomNumber];
+}
+
+console.log();
+// Logs a string for each suit of card the while loop had to loop through until it got to 'Spade'.
+// The while loop's condition is basically while I don't have spade loop again. This condition evals to true until currentCard is a Spade.
+// The randomNumber generator variable uses .floor to round down to nearest integer. Important b/c of below.
+// Math.random is muliplied by the length of cards to create a limit, of up to the length, on numbers generated.
+// The randomNumber cannot equal the length of the array, keeping the generated number within the array's actual index values. 
+// Thus, randomNumber always targets a valid element of the array.
+// console.log()   on the final line is important it ends the program once the while loop is satisfied for its false condition.
+// While also loging the indented results.  
+
+
+
+
+// jQuery
+
+// Library written in js for helping to interact with html DOM using its easier syntax and functions.
+// It is a common convention to name variables that hold jQuery selectors with a dollar sign $.
+// Uses $ to basically call jQuery on this thing.
+/* In order to use jQuery, we need to:
+
+Include jQuery in our project. jQuery is a library, which means it is a set of code in a file, therefore we will need to link that file in our HTML in order to access it.
+
+Once we link it in our HTML file, we can use its functions and syntax in our js/main.js file.
+Once linked, we'll need to make sure our HTML is loaded before we run our jQuery and JavaScript code.
+
+This will prevent our jQuery and JavaScript code from running before the elements they select are rendered. */
+
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script> 
+// link to include jQuery
+// place before body tag all script tags to allow those scripts access to jQuery.
+
+
+var main = function() {
+  
+}
+
+$(document).ready(main);
+// $(document).ready(main); Checks to make sure the document/webpage attached to the main.js file loads before calling the js code.
+// To do this create an empty function inside of the main.js to use as a callback for the jQuery method ready to refer back to once the page is ready, therefore loaded.
+
+
+document.getElementsByClassName('skillset');
+
+$('.skillset');
+// These two are equal. Both select the skillset class.
+
+
+.hide()
+// Is a jQuery function that adds CSS property display: none to whichever DOM element it is being called on.
+// This makes the page fade out by default. To be faded in later using .fadeIn(timeinmilliseconds). Default time is 400s.
