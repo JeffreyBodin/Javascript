@@ -9,3 +9,8 @@ var stringAdd = (outPutVariableNames, inputStrings) => {
   let stringsSum = varX += newString;
   return stringsSum;
 }
+
+var exportobject = {
+  stringAdd: stringAdd
+}
+module.exports =  exportobject;
