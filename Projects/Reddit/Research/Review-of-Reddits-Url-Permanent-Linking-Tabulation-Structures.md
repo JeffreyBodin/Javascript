@@ -1,9 +1,9 @@
-// Review of Best Practices on Reddit Link-Post Titling //
+// Review of Reddit's Url Permanent Linking Tabulation Structures //
 
 ```text
-----------------------------------------------------------
+--------------------------------------------------------------------
 // Review of Reddit's Url Permanent Linking Tabulation Structures //
-----------------------------------------------------------
+--------------------------------------------------------------------
 Commit Date: 2020-10-22
 ```
 
@@ -93,3 +93,14 @@ To disallow all end Redditors. The ability to essentially "design" their own top
 
 ```
 
+-----
+
+```js
+Review of Best Practices on Reddit Link-Post Titling
+2020-10-22
+v.0.0.1
+
+MIT License
+
+Copyright (c) 2020 Jeffrey Bodin
+```
