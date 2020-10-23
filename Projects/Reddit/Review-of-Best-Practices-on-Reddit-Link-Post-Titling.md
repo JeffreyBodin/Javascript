@@ -48,3 +48,12 @@ Then do,
 ```
 -----
 
+```js
+Review of Best Practices on Reddit Link-Post Titling
+2020-10-22
+v.0.0.1
+
+MIT License
+
+Copyright (c) 2020 Jeffrey Bodin
+```
