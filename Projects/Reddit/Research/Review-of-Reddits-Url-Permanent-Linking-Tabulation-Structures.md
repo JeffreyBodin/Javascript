@@ -2,7 +2,7 @@
 
 ```text
 --------------------------------------------------------------------
-// Review of Reddit's Url Permanent Linking Tabulation Structures //
+// Review-of-Reddits-Url-Permanent-Linking-Tabulation-Structures //
 --------------------------------------------------------------------
 Commit Date: 2020-10-22
 ```
@@ -96,7 +96,7 @@ To disallow all end Redditors. The ability to essentially "design" their own top
 -----
 
 ```js
-Review of Best Practices on Reddit Link-Post Titling
+Review-of-Reddits-Url-Permanent-Linking-Tabulation-Structures
 2020-10-22
 v.0.0.1
 
