@@ -1,0 +1,126 @@
+// 2021-05-13 Gmail - Filter - Ebay
+
+
+/* 
+  SCHEMA 
+  && 
+  DESIGN METHODOLOGY
+
+```  
+/* Filter -> "call n (1) here" -> "nxt call n(IterativeIO)" */
+// (1)
+// '  "thing"  ' | '  "Class" of thing filtering here  ' Filter
+
+// ln 
+'string n(1) here' || 'string n(2) here' || 'string n(3) here'
+
+// ls
+'string n(1) here'
+'string n(2) here'
+'string n(3) here'
+
+
+// ----- //
+```
+
+  1. Each filter is classed by its function as a method.
+
+  2. Each filter has sub-filters "(1), (2), (3), (4), n (etc)".
+
+  3. Each sub-filter is classed by its function as a method.
+
+  4. Each sub-filter has a "ln" OR "single line" ver. (Called)
+
+  5. Each sub-filter has a "ls" OR string literal list. (dev | NOT Called)
+
+  6. Each sub-filter is followed by a new line && (n) sub-filter.
+
+  7. Each filter is followed by two new lines && pagination.
+
+  8. Each pagination is followed by five new lines && next filter.
+
+  SCHEMA 
+  && 
+  DESIGN METHODOLOGY
+*/
+
+
+// ----- //
+
+
+
+
+
+/* Filter -> [Buy|Sell]/Ebay -> Always mark it as important */
+// (1)
+// "sent a message" | Correspondence Filter
+
+// ln
+
+
+// ls
+
+
+// (2)
+// "New" | Offer Filter
+
+// ln 
+'You have a new offer:' ||
+
+// ls
+
+// 'Subject'
+
+
+// (3)
+// "Seller" "Counter" | Offer Filter
+
+// ls
+
+
+// ln
+
+
+// ----- //
+
+
+
+
+
+/* Filter -> Skip Inbox (Archive) -> [Buy|Sell]/Ebay */
+// (1)
+// Archive Filter
+
+// ln | db rdy is ✅
+'Sale confirmed:' || '... has been relisted.' ||
+  // ^ filter text field entry | enter -> under "contains" | for string assoc || parsing
+
+// ls | db rdy is ❎
+'Sale confirmed:'
+'... has been relisted.'
+'been relisted.'
+'need to be relisted.'
+
+// (1)
+// Archive Filter | Offer Filter
+
+// ls
+'Counter offer submitted to seller:'
+
+// ln
+
+
+// ----- //
+
+
+
+
+/* Filter -> [Saved]/IMPORTANT */
+// (1)
+// "Receipt" | YOUR Purchases
+
+// ln
+'Receipt for Your Payment to Ebay Inc.'
+
+// ls
+'Receipt for Your Payment to Ebay Inc.'
