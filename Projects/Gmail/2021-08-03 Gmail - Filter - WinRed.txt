@@ -1,0 +1,100 @@
+// 2021-08-03 Gmail - Filter - WinRed
+// github/JeffreyBodin
+
+// init commit (2021-08-03_1818)
+
+
+/* Methodology */
+
+  /* 
+  2021-08-03_1844 [DRAFT]
+  -- Rough-initial draft of overall scope + methodology.
+  
+  This will be:
+  Focusing on 
+    "parsement of notices"
+      - information
+    vs 
+    "parsement of solicitations"
+      - donations  
+  
+  Methodology
+  -> "parsement of solicitations" 
+     alone
+     || (with info) 
+     || (without info)
+     'null' addresses
+     || (with info) 
+     || (without info)
+     'null' subject ln || lns
+     || (with info) 
+     || (without info)
+     'null' subject strings
+     || (with info) 
+     || (without info)     
+  */
+
+
+/* Examples */
+'Your new TD Ameritrade statement is available.' || 'Important tax return document available' || 'A notification from TD Ameritrade' !! 'Confirming an update to your user ID security'
+  // above ^ are filters
+  // utilized in 'financial' "scoped" google filters
+
+
+
+// search query starting point
+https://mail.google.com/mail/ca/u/0/#advanced-search/from=contact%40email.donaldjtrump.com+OR+contact%40m.caitlynjenner.com+OR+contact%40win.donaldjtrump.com&sizeoperator=s_sl&sizeunit=s_smb&query=from%3A(contact%40email.donaldjtrump.com+OR+contact%40m.caitlynjenner.com+OR+contact%40win.donaldjtrump.com)
+
+// emails
+from:(contact@email.donaldjtrump.com OR contact@m.caitlynjenner.com OR contact@win.donaldjtrump.com)
+
+// filter by displayed || designated "Sender"
+'Donald Trump Jr.'
+ || 
+ 'Trump Deadline'
+ || 
+ 'Team Trump'
+ || 
+ 'President Trump Updates'
+ || 
+ 'Presidential Member'
+ || 
+ 'Caitlyn for California'
+ || 
+ 'President Trump'
+ || 
+ 'Mr. Donald Trump Jr.'
+ ||
+ 'Mr. President, Donald J. Trump'
+ ||
+ 'Trump Signed MAGA Hat'
+ ||
+ 'Trump Rally Fund'
+ ||
+ 'President Donald J. Trump'
+ ||
+ 'Trump Breaking News'
+ ||
+ '
+
+// !filter by 'subject' ln
+'BREAKING NEWS from'
+ ||
+ 'What do you think?'
+ ||
+
+!! 'BREAKING NEWS from' || 'What do you think?' ||
+
+
+
+
+
+
+
+
+
+/*
+  MIT License 
+
+  Copyright (c) 2021 Jeffrey Bodin
+*/
