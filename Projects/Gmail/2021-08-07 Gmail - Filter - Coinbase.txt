@@ -1,0 +1,58 @@
+// 2021-08-07 Gmail - Filter - Coinbase
+
+
+
+// emails | 'From'
+'no-reply@coinbase.com'
+
+// emails | 'To'
+' '
+
+// subject string | 'Subject'
+
+
+// (1)
+// Crypto Transaction Log | 'Has the words'
+
+// v-alpha
+"A withdrawal of" 
+ || 
+ "You just received" 
+ || 
+ "Your EOS purchase" 
+ || 
+ "Your USDC purchase" 
+ || 
+ "Coinbase Earn" 
+ || 
+ "is now available" NOT "Your available balance has increased by"
+
+// v-beta
+ "A withdrawal of" || "You just received" || "Your EOS purchase" || "Your USDC purchase" || "Coinbase Earn" || "is now available" NOT "Your available balance has increased by"
+
+
+/*--------------*/
+
+
+// (2)
+// Crypto Documents Archive | 'Has the words'
+
+// v-alpha
+"Your Annual" 
+ || 
+ "An application has been linked to your account" 
+ || 
+ "An update on your payment method" 
+ || 
+ "Your available balance"
+
+// v-beta
+"Your Annual" || "An application has been linked to your account" || "An update on your payment method" || "Your available balance"
+
+
+
+/*
+  MIT License 
+
+  Copyright (c) 2021 Jeffrey Bodin
+*/
