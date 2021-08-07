@@ -19,6 +19,8 @@
  || 
  "You just received" 
  || 
+ "Your sell for" 
+ || 
  "Your EOS purchase" 
  || 
  "Your USDC purchase" 
@@ -28,7 +30,7 @@
  "is now available" NOT "Your available balance has increased by"
 
 // v-beta
- "A withdrawal of" || "You just received" || "Your EOS purchase" || "Your USDC purchase" || "Coinbase Earn" || "is now available" NOT "Your available balance has increased by"
+ "A withdrawal of" || "You just received" || "Your sell for" || "Your EOS purchase" || "Your USDC purchase" || "Coinbase Earn" || "is now available" NOT "Your available balance has increased by"
 
 
 /*--------------*/
