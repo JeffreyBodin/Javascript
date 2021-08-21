@@ -111,14 +111,23 @@ ebay@ebay.com
 // "Delivery" Updates | Transit Filter
 
 // ln
-"📦 ORDER DELIVERED:" || "ORDER DELIVERED:"
+"📦 ORDER DELIVERED:" || "ORDER DELIVERED:" || "Do you like your"
 
 // ls
 "📦 ORDER DELIVERED:"
 "ORDER DELIVERED:"
+"Do you like your"
 
 
+// (5)
+// "Payment" Updates | Selling Filter
 
+// ln
+"The payment from" || "You've been paid!"
+
+// ls
+"The payment from"
+"You've been paid!"
 
 
 // ----- //
@@ -132,18 +141,26 @@ ebay@ebay.com
 // Archive Filter
 
 // ln | db rdy is ✅
-"Sale confirmed:" || "... has been relisted." || "been relisted." || "need to be relisted." || "Listings missing required or recommended item specifics" || "✅ ORDER CONFIRMED:" || "🚚 ORDER UPDATE:"
+"💸 Sale confirmed:" || "Sale confirmed:" || "Your item has sold:" || "... has been relisted." || "has been relisted." || "been relisted." || "need to be relisted." || "Listings missing required or recommended item specifics" || "Update to Payments Terms of Use" || "✅ ORDER CONFIRMED:" || "ORDER CONFIRMED:" || "🚚 ORDER UPDATE:" || "ORDER UPDATE:" || "You successfully canceled an order"
   // note ^ text field entry
   // enter -> under "contains" | for string assoc && parsing
 
 // ls | db rdy is ❎
+"💸 Sale confirmed:"
 "Sale confirmed:"
+"Your item has sold:"
 "... has been relisted."
+"has been relisted."
 "been relisted."
 "need to be relisted."
 "Listings missing required or recommended item specifics"
+"Update to Payments Terms of Use"
 "✅ ORDER CONFIRMED:"
+"ORDER CONFIRMED:"
 "🚚 ORDER UPDATE:"
+"ORDER UPDATE:"
+"You successfully canceled an order"
+
 
 
 // (2)
@@ -187,16 +204,17 @@ ebay@ebay.com
 
 // ls 
 "eBay - jeffrey_bodin"
- ||
- "member@ebay.com"
+"member@ebay.com"
 
 // ln ▶ 'subj'
 "jeffrey_bodin sent a message about" || "jeffrey_bodin sent a message" || "has sent a question about item #"
 
 // ls
 "jeffrey_bodin sent a message about"
- ||
- "jeffrey_bodin sent a message"
+"jeffrey_bodin sent a message"
+"has sent a question about item #"
+
+
 
 
 
@@ -206,19 +224,29 @@ ebay@ebay.com
 
 
 
-/* Filter -> [Saved]/IMPORTANT */
+/* Filter -> [Saved]/IMPORTANT -> Never mark as important */
 // (1)
 // "Receipt" | YOUR Purchases
 
 // ln
-'Receipt for Your Payment to Ebay Inc.'
+"Receipt for Your Payment to Ebay Inc." || "statement is ready"
 
 // ls
-'Receipt for Your Payment to Ebay Inc.'
-'statement is ready'
+"Receipt for Your Payment to Ebay Inc."
+"statement is ready"
 
 
+// (2)
+// "Account" | Your Seller Related
 
+// ln
+"Your payout method has been updated" || "eBay has sent your payout" || "simpler way to get paid" || "Your eBay invoice for"
+
+// ls
+"Your payout method has been updated"
+"eBay has sent your payout"
+"simpler way to get paid"
+"Your eBay invoice for"
 
 
 
