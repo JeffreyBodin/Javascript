@@ -45,6 +45,26 @@
 */
 
 
+// (GLOBALS) //
+
+
+/* Filter -> [Buy|Sell]/Ebay -> Never send it to spam -> Always mark it as important */
+// marks "important" | Global Scope
+
+// ln ▶ from
+ebay@ebay.com || member@ebay.com || @members.ebay
+
+// ls
+ebay@ebay.com
+ ||
+ member@ebay.com
+ ||
+ @members.ebay
+
+
+// (GLOBALS) //
+
+
 // ----- //
 
 
@@ -56,29 +76,49 @@
 // "sent a message" | Correspondence Filter
 
 // ln
-
+"has sent a question about item #" ||
 
 // ls
+"has sent a question about item #"
+
 
 
 // (2)
 // "New" | Offer Filter
 
 // ln 
-'You have a new offer:' ||
+"📩 You have a new offer:" || "You have a new offer:"
 
 // ls
+"📩 You have a new offer:"
+"You have a new offer:"
 
-// 'Subject'
 
 
 // (3)
 // "Seller" "Counter" | Offer Filter
 
-// ls
+// ln
+"📩 Seller made a counter offer:" || "Seller made a counter offer:"
 
+// ls
+"📩 Seller made a counter offer:"
+"Seller made a counter offer:"
+
+
+
+// (4)
+// "Delivery" Updates | Transit Filter
 
 // ln
+"📦 ORDER DELIVERED:" || "ORDER DELIVERED:"
+
+// ls
+"📦 ORDER DELIVERED:"
+"ORDER DELIVERED:"
+
+
+
 
 
 // ----- //
@@ -92,25 +132,76 @@
 // Archive Filter
 
 // ln | db rdy is ✅
-'Sale confirmed:' || '... has been relisted.' ||
-  // ^ filter text field entry | enter -> under "contains" | for string assoc || parsing
+"Sale confirmed:" || "... has been relisted." || "been relisted." || "need to be relisted." || "Listings missing required or recommended item specifics" || "✅ ORDER CONFIRMED:" || "🚚 ORDER UPDATE:"
+  // note ^ text field entry
+  // enter -> under "contains" | for string assoc && parsing
 
 // ls | db rdy is ❎
-'Sale confirmed:'
-'... has been relisted.'
-'been relisted.'
-'need to be relisted.'
+"Sale confirmed:"
+"... has been relisted."
+"been relisted."
+"need to be relisted."
+"Listings missing required or recommended item specifics"
+"✅ ORDER CONFIRMED:"
+"🚚 ORDER UPDATE:"
 
-// (1)
+
+// (2)
 // Archive Filter | Offer Filter
 
+// ln
+"Counter offer submitted to seller:" || "Next steps if you still want" || "How badly do you want"
+
 // ls
-'Counter offer submitted to seller:'
+"Counter offer submitted to seller:"
+"Next steps if you still want"
+"How badly do you want"
+
+
+// (3)
+// Archive Filter | Listing Filter
 
 // ln
+"is live!"
+
+// ls
+"is live!"
+
+
+
 
 
 // ----- //
+
+
+
+
+
+/* Filter -> Skip Inbox (Archive) -> [Buy|Sell]/Ebay -> Never mark it as important */
+
+// (4)
+// Archive Filter | Correspondence Filter
+
+// ln ▶ 'from'
+"eBay - jeffrey_bodin" || "member@ebay.com"
+
+// ls 
+"eBay - jeffrey_bodin"
+ ||
+ "member@ebay.com"
+
+// ln ▶ 'subj'
+"jeffrey_bodin sent a message about" || "jeffrey_bodin sent a message" || "has sent a question about item #"
+
+// ls
+"jeffrey_bodin sent a message about"
+ ||
+ "jeffrey_bodin sent a message"
+
+
+
+// ----- //
+
 
 
 
@@ -124,3 +215,22 @@
 
 // ls
 'Receipt for Your Payment to Ebay Inc.'
+'statement is ready'
+
+
+
+
+
+
+
+
+
+
+// ----- //
+
+
+/*
+  MIT License 
+
+  Copyright (c) 2021 Jeffrey Bodin
+*/
