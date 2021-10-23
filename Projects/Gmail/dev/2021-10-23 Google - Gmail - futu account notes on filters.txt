@@ -1,0 +1,8 @@
+account5@fututrade.com OR no_reply6@fututrade.com OR no_reply26@fututrade.com OR no_reply13@fututrade.com
+
+
+"Trade Confirmation" || "Congratulation! Your Funding Transfer was Completed!" || "Funding Transfer was Completed" || "A Transfer to Futu Account was Initiated" || "A Transfer to Futu Account was Submitted" || "Futu Account was Submitted" || "Futu Account was Initiated"
+
+'Trade Confirmation' || 'Congratulation! Your Funding Transfer was Completed!' || 'Funding Transfer was Completed' || 'A Transfer to Futu Account was Initiated' || 'A Transfer to Futu Account was Submitted' || 'Futu Account was Submitted' || 'Futu Account was Initiated'
+
+
